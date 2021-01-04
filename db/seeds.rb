@@ -20,7 +20,7 @@ puts "Création des utilisateurs"
   user1 = User.create!(
     name: "Hugo",
     email: "hugo@gmail.com",
-    password: "abcdef"
+    password: "abcdef",
     current_year: 3,
     description: "En provencance de Tahiti, j'aime les pigeons, la brioche et les cartes Yu-Gy-Oh",
     insta_name: "hugo_lm__"
@@ -29,7 +29,7 @@ puts "Création des utilisateurs"
   user2 = User.create!(
     name: "Julie",
     email: "julie@gmail.com",
-    password: "abcdef"
+    password: "abcdef",
     current_year: 1,
     description: "Une future pro de la comm', j'aspire à révolutionner la scène bordelaise",
     insta_name: "julie_lmv"
@@ -65,15 +65,15 @@ puts "Quartiers créés!"
 
 puts "Création des spots"
   place1 = Place.create!(
-    name: "Allo de rose"
-    price_level: 2
+    name: "Allo de rose",
+    price_level: 2,
     category: category3,
     district: district1,
     address: "12 rue de la Merci, Bordeaux"
     )
   place2 = Place.create!(
-    name: "Le Comptoir de Tutelle"
-    price_level: 3
+    name: "Le Comptoir de Tutelle",
+    price_level: 3,
     category: category1,
     district: district1,
     address: "20 rue Pilliers de Tutelle, Bordeaux"
@@ -95,7 +95,7 @@ puts "Création des commentaires"
     )
   Comment.create!(
     user: user2,
-    place: place1,
+    place: place2,
     description: "Whoaw, super endroit!",
     rating: 4
     )
