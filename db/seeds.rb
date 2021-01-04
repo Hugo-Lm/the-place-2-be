@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 puts "destruction des données en bdd"
   Comment.destroy_all
   User.destroy_all
@@ -63,45 +65,67 @@ puts "Création des quartiers"
     )
 puts "Quartiers créés!"
 
+# puts "Création des spots"
+#   place1 = Place.create!(
+#     name: "Allo de rose",
+#     price_level: 2,
+#     category: category3,
+#     district: district1,
+#     address: "12 rue de la Merci, Bordeaux"
+#     )
+#   place2 = Place.create!(
+#     name: "Le Comptoir de Tutelle",
+#     price_level: 3,
+#     category: category1,
+#     district: district1,
+#     address: "20 rue Pilliers de Tutelle, Bordeaux"
+#     )
+# puts "Spots créés!"
+
+# puts "Création des commentaires"
+#   Comment.create!(
+#     user: user1,
+#     place: place1,
+#     description: "Top top top!",
+#     rating: 5
+#     )
+#   Comment.create!(
+#     user: user2,
+#     place: place1,
+#     description: "Bof.",
+#     rating: 2
+#     )
+#   Comment.create!(
+#     user: user2,
+#     place: place2,
+#     description: "Whoaw, super endroit!",
+#     rating: 4
+#     )
+# puts "Commentaires créés"
+
+
+
 puts "Création des spots"
-  place1 = Place.create!(
-    name: "Allo de rose",
-    price_level: 2,
-    category: category3,
-    district: district1,
-    address: "12 rue de la Merci, Bordeaux"
+10.times do
+  Place.create!(
+    name: Faker::Restaurant.name ,
+    price_level: rand(1..3),
+    category: Category.all.sample,
+    district: District.all.sample,
+    address: Faker::Address.street_address
     )
-  place2 = Place.create!(
-    name: "Le Comptoir de Tutelle",
-    price_level: 3,
-    category: category1,
-    district: district1,
-    address: "20 rue Pilliers de Tutelle, Bordeaux"
-    )
+end
 puts "Spots créés!"
 
 puts "Création des commentaires"
+10.times do
   Comment.create!(
-    user: user1,
-    place: place1,
-    description: "Top top top!",
-    rating: 5
+    user: User.all.sample,
+    place: Place.all.sample,
+    description: Faker::Movies::StarWars.quote,
+    rating: rand(1..5)
     )
-  Comment.create!(
-    user: user2,
-    place: place1,
-    description: "Bof.",
-    rating: 2
-    )
-  Comment.create!(
-    user: user2,
-    place: place2,
-    description: "Whoaw, super endroit!",
-    rating: 4
-    )
+end
 puts "Commentaires créés"
 
 puts "Seed réussi :)"
-
-
-

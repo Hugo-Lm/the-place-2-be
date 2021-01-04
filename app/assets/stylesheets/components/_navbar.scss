@@ -1,12 +1,28 @@
-.navbar-lewagon {
-  justify-content: space-between;
+.navbar-place2be {
+  display: flex;
+  justify-content: space-around;
   background: white;
+  align-items: center;
+  a {
+    color: black;
+    font-family: $navbar-font;
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.logo-place2be {
+  width: 190px;
+  height: 55px;
+  margin: 8px 0px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.navbar-active {
+  color: #F41F1F !important;
 }

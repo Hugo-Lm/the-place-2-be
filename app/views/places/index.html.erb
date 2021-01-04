@@ -1,1 +1,5 @@
 <h1>You're in the index of Places!</h1>
+<% @places.each do |place| %>
+  <%= link_to place.name, place_path(place) %>
+  <br>
+<% end %>
