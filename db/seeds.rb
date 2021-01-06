@@ -76,7 +76,7 @@ puts "Création des spots"
     price_level: rand(1..3),
     category: Category.all.sample,
     district: District.all.sample,
-    address: Faker::Address.street_address
+    address: "#{rand(1..200)} Rue Sainte-Catherine, Bordeaux"
     )
 end
 puts "Spots créés!"
