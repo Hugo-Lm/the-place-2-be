@@ -53,6 +53,7 @@ puts "Création des catégories de lieux"
     )
 puts "Catégories de lieux créés!"
 
+
 puts "Création des quartiers"
   district1 = District.create!(
     name: "Centre"
@@ -65,43 +66,6 @@ puts "Création des quartiers"
     )
 puts "Quartiers créés!"
 
-# puts "Création des spots"
-#   place1 = Place.create!(
-#     name: "Allo de rose",
-#     price_level: 2,
-#     category: category3,
-#     district: district1,
-#     address: "12 rue de la Merci, Bordeaux"
-#     )
-#   place2 = Place.create!(
-#     name: "Le Comptoir de Tutelle",
-#     price_level: 3,
-#     category: category1,
-#     district: district1,
-#     address: "20 rue Pilliers de Tutelle, Bordeaux"
-#     )
-# puts "Spots créés!"
-
-# puts "Création des commentaires"
-#   Comment.create!(
-#     user: user1,
-#     place: place1,
-#     description: "Top top top!",
-#     rating: 5
-#     )
-#   Comment.create!(
-#     user: user2,
-#     place: place1,
-#     description: "Bof.",
-#     rating: 2
-#     )
-#   Comment.create!(
-#     user: user2,
-#     place: place2,
-#     description: "Whoaw, super endroit!",
-#     rating: 4
-#     )
-# puts "Commentaires créés"
 
 
 

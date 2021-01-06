@@ -1,2 +1,27 @@
-<h1> <%= @place.name %> </h1>
-<%= link_to "Retour", places_path %>
+<div class="container">
+  <div class="place-infos">
+    <h1> <%= @place.name %> </h1>
+    <span> <%= @place.address %> </span>
+    <span> <%= @place.category.name %> </span>
+    <span> <%= @place.district.name %> </span>
+    <%= link_to "Retour", places_path %>
+    <%= link_to "Supprimer cet établissement", place_path(@place), data: { confirm: 'Are you sure?' }, method: :delete %>
+    <%= link_to "Modifier les informations", edit_place_path(@place)%>
+  </div>
+  <div class="comments-blocks">
+    <% @comments.each do |comment| %>
+      <div class="comment-card">
+        <p> <%= comment.user.name %> </p>
+        <p> <%= comment.description %> </p>
+        <p> <%= comment.rating %>/5 </p>
+      </div>
+    <% end %>
+    <hr>
+    <%= simple_form_for([@place, @comment]) do |f| %>
+      <%= f.input :description %>
+      <%= f.input :rating, collection: (1..5) %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
+

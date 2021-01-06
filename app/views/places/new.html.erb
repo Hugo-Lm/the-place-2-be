@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Ajoutes un spot au city-guide !</h1>
+  <%= simple_form_for(@place) do |f| %>
+    <%= f.input :name, label: "Nom" %>
+    <%= f.input :address, label: "Addresse" %>
+    <%= f.input :price_level, collection: (1..3), label: "Fourchette de prix" %>
+    <%= f.association :category, label: "Type d'établissement" %>
+    <%= f.association :district, label: "Quartier" %>
+    <%= f.submit "Ajouter" %>
+  <% end %>
+</div>
