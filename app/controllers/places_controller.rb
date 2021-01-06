@@ -23,11 +23,13 @@ class PlacesController < ApplicationController
   end
 
   def edit
-    @place = Place.new
+    @place = Place.find(params[:id])
   end
 
   def update
     @place = Place.find(params[:id])
+    @place.update(place_params)
+    redirect_to place_path(@place)
   end
 
   def destroy

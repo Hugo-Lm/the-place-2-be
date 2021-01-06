@@ -1,9 +1,10 @@
 <div class="container">
+  <%= link_to "Retour", place_path(@place) %>
   <%= simple_form_for(@place) do |f| %>
     <%= f.input :name %>
     <%= f.input :price_level %>
-    <%= f.input :category %>
-    <%= f.input :district %>
+    <%= f.association :category %>
+    <%= f.association :district %>
     <%= f.submit %>
   <% end %>
 </div>
