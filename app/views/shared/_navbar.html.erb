@@ -1,8 +1,12 @@
 <div class="container-fluid">
 
   <div class="navbar-place2be">
-    <%= link_to "City-guide", places_path, class: "navbar-active"%>
-    <%= link_to "Map", "#" %>
+    <div class="navbar-item-block <%= "navbar-active" if action_name == "index" && controller_name == "places" %> ">
+      <%= link_to "City-guide", places_path %>
+    </div>
+    <div class="navbar-item-block <%= "navbar-active" if action_name == "index" && controller_name == "maps" %> ">
+      <%= link_to "Map", maps_path %>
+    </div>
     <%= image_tag("logo-place2be.png", class: "logo-place2be") %>
     <%= link_to "Our team", "#" %>
     <%= link_to "About us", "#" %>
