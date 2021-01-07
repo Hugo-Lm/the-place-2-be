@@ -1,4 +1,4 @@
-module Spot
+module spots
   class PlacesController < ApplicationController
     def index
       @places = Place.all
