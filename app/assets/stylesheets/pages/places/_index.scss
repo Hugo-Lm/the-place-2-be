@@ -1,0 +1,64 @@
+.place-card {
+  background-color: white;
+  margin-bottom: 32px;
+  height: auto;
+  padding: 16px;
+  border-radius: 8px;
+  &:hover {
+    box-shadow:  0 0 15px rgba(0,0,0,0.1);
+  }
+  .place-address {
+    color: grey;
+    font-size: 12px;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.cards-block {
+  margin-top: 71px;
+}
+
+.container {
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.background-content {
+  background-image: url("https://images.unsplash.com/photo-1458139645545-29af6c29f6b9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+
+// ___________ FILTER BAR _________
+
+.top-bar {
+  display: flex;
+  padding: 16px;
+  margin: 16px 0px;
+}
+
+.filter-bar {
+  padding: 16px;
+  flex-grow: 1;
+  justify-content: space-around;
+  display: flex;
+  background-color: #FFE8E8;
+  border-radius: 8px;
+}
+
+.new-spot-button {
+  padding: 16px;
+  background-color: #FF7373;
+  border-radius: 8px;
+  margin-left: 16px;
+  a {
+    color:white;
+  }
+}

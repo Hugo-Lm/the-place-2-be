@@ -1,2 +1,6 @@
-<h2><%= place.name %></h2>
+<%= link_to place_path(place) do %>
+  <h2><%= place.name %></h2>
+<% end %>
 <p><%= place.address %></p>
+<p><%= place.category.name %></p>
+<p>Fourchette de prix : <%= place.price_level %>/3</p>

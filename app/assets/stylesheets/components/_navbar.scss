@@ -1,4 +1,7 @@
 .navbar-place2be {
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   background: white;
@@ -10,6 +13,7 @@
   a:hover {
     text-decoration: none;
   }
+  z-index: 999;
 }
 
 .logo-place2be {
@@ -25,4 +29,10 @@
 
 .navbar-active > a {
   color: #F41F1F !important;
+}
+
+.navbar-item-block {
+  &:hover {
+    cursor: pointer;
+  }
 }

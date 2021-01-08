@@ -1,7 +1,21 @@
 module Spots
   class PlacesController < ApplicationController
     def index
-      @places = Place.all
+      # raise
+      @categories = Category.all
+      @districts = District.all
+      if params[:category].present?
+        @placesCategory = Place.where.not(category: params[:category].to_i)
+      else
+        @placesCategory = []
+      end
+
+      if params[:district].present?
+        @placesDistrict = Place.where.not(district: params[:district].to_i)
+      else
+        @placesDistrict = []
+      end
+      @places = Place.all - @placesCategory - @placesDistrict
     end
 
     def show

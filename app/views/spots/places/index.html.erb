@@ -1,16 +1,39 @@
-<div class="container">
-  <%= link_to "Ajouter un nouveau spot", new_place_path %>
-  <div class="places-block">
-    <% @places.each do |place| %>
-      <%= link_to place_path(place) do %>
-        <div class="place-card">
-          <%= place.name %>
-          <%= place.address %>
-          <%= place.price_level %>
-          <%= place.district.name %>
-          <%= place.category.name %>
+<div class="background-content">
+  <div class="container">
+    <div class="row cards-block">
+      <div class="col-12 top-bar">
+
+        <div class="filter-bar">
+          <%= form_tag places_path, method: :get do %>
+            <%= select_tag "category", options_from_collection_for_select(@categories, "id", "name"), prompt: "Catégorie" %>
+            <%= select_tag "district", options_from_collection_for_select(@districts, "id", "name"), prompt: "Quartier" %>
+
+            <%= submit_tag "Search", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+
+        <div class="new-spot-button">
+          <%= link_to "Ajouter une adresse", new_place_path %>
+        </div>
+      </div>
+      <% @places.each do |place| %>
+        <div class="col-6">
+          <%= link_to place_path(place) do %>
+            <div class="place-card">
+              <%# if place.photo.attached? %>
+                <%#= cl_image_tag place.photo, height: 300, width: 400, crop: :fill %>
+                <%= cl_image_tag "qx6lxe1ysjxiu6povkh4s945t143" %>
+                <%#= image_tag("https://i.pinimg.com/originals/de/0d/19/de0d19d835dd1224c5208701d78bd6e7.jpg") %>
+              <%# end %>
+              <h2><%= place.name %></h2>
+              <p class="place-address"><%= place.address %></p>
+              <p>Fourchette de prix : <%= place.price_level %>/3</p>
+              <p><%= place.district.name %></p>
+              <p><%= place.category.name %></p>
+            </div>
+          <% end %>
         </div>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
