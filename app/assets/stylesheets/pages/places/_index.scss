@@ -21,6 +21,16 @@
     width: 200px;
     margin-right: 16px;
   }
+  .card-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    .card-infos-bottom {
+      display:flex;
+      justify-content: space-between;
+    }
+  }
 }
 
 .cards-block {
@@ -28,7 +38,7 @@
 }
 
 .container {
-  margin-top: 71px;
+  margin-top: 79px;
   a {
     text-decoration: none;
     color: black;

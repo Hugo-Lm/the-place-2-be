@@ -27,14 +27,18 @@
                 <% end %>
               </div>
               <div class="card-infos">
-                <h2><%= place.name %></h2>
-                <p class="place-address"><%= place.address %></p>
-                <div class="price-level">
-                  <% place.price_level.to_i.times do %>
-                    <i class="fas fa-euro-sign"></i>
-                  <% end %>
+                <div class="card-infos-top">
+                  <h2><%= place.name %></h2>
+                  <p class="place-address"><%= place.address %></p>
                 </div>
-                <p><%= place.category.name %></p>
+                <div class="card-infos-bottom">
+                  <p><%= place.category.name %></p>
+                  <div class="price-level">
+                    <% place.price_level.to_i.times do %>
+                      <i class="fas fa-euro-sign"></i>
+                    <% end %>
+                  </div>
+                </div>
               </div>
             </div>
           <% end %>
