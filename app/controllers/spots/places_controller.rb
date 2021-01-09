@@ -15,7 +15,14 @@ module Spots
       else
         @placesDistrict = []
       end
-      @places = Place.all - @placesCategory - @placesDistrict
+
+      if params[:budget].present?
+        @placesBudget = Place.where.not(price_level: params[:budget].to_i)
+      else
+        @placesBudget = []
+      end
+
+      @places = Place.all - @placesCategory - @placesDistrict - @placesBudget
     end
 
     def show

@@ -4,6 +4,7 @@
   height: auto;
   padding: 16px;
   border-radius: 8px;
+  display: flex;
   &:hover {
     box-shadow:  0 0 15px rgba(0,0,0,0.1);
   }
@@ -14,6 +15,12 @@
   p {
     margin: 0;
   }
+  .card-photo {
+    border-radius: 8px;
+    height: 200px;
+    width: 200px;
+    margin-right: 16px;
+  }
 }
 
 .cards-block {
@@ -21,6 +28,7 @@
 }
 
 .container {
+  margin-top: 71px;
   a {
     text-decoration: none;
     color: black;
@@ -32,7 +40,7 @@
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 
@@ -44,14 +52,21 @@
   margin: 16px 0px;
 }
 
-.filter-bar {
-  padding: 16px;
+.filter-bar-block {
   flex-grow: 1;
+  .filter-bar {
+  padding: 8px;
   justify-content: space-around;
   display: flex;
   background-color: #FFE8E8;
   border-radius: 8px;
+  }
+  .filter-selector {
+    border: none;
+    background-color: #FFE8E8;
+  }
 }
+
 
 .new-spot-button {
   padding: 16px;
